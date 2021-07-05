@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router";
-import { useHistory } from "react-router-dom";
+
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+
 import axios from 'axios';
+
+const c1Style = {
+  // background: 'gray'
+}
 
 export default class Create extends Component {
   constructor(props) {
@@ -75,85 +79,89 @@ export default class Create extends Component {
 
   // This following section will display the form that takes the input from the user.
   render() {
+
+
     return (
-      <Container className="mt-5">
-        <Jumbotron>
-          <h3>Create New Record</h3>
-          <form onSubmit={this.onSubmit}>
-            <div className="form-group">
-              <label>Name of the person: </label>
-              <input
-                type="text"
-                className="form-control"
-                value={this.state.person_name}
-                onChange={this.onChangePersonName}
-              />
-            </div>
-            <div className="form-group">
-              <label>Person's position: </label>
-              <input
-                type="text"
-                className="form-control"
-                value={this.state.person_position}
-                onChange={this.onChangePersonPosition}
-              />
-            </div>
-            <div className="form-group">
-              <label>Person's Salary: </label>
-              <input
-                type="text"
-                className="form-control"
-                value={this.state.person_salary}
-                onChange={this.onChangePersonSalary}
-              />
-            </div>          
-            <div className="form-group">
-              <div className="form-check form-check-inline">
+      <Container className="mt-5" >
+        
+          <Jumbotron style={c1Style} className="mt-5 jumbotron--fade-in">
+            <h3>Create New Record</h3>
+            <form onSubmit={this.onSubmit}>
+              <div className="form-group">
+                <label>Name of the person: </label>
                 <input
-                  className="form-check-input"
-                  type="radio"
-                  name="priorityOptions"
-                  id="priorityLow"
-                  value="Intern"
-                  checked={this.state.person_level === "Intern"}
-                  onChange={this.onChangePersonLevel}
+                  type="text"
+                  className="form-control"
+                  value={this.state.person_name}
+                  onChange={this.onChangePersonName}
                 />
-                <label className="form-check-label">Intern</label>
               </div>
-              <div className="form-check form-check-inline">
+              <div className="form-group">
+                <label>Person's position: </label>
                 <input
-                  className="form-check-input"
-                  type="radio"
-                  name="priorityOptions"
-                  id="priorityMedium"
-                  value="Junior"
-                  checked={this.state.person_level === "Junior"}
-                  onChange={this.onChangePersonLevel}
+                  type="text"
+                  className="form-control"
+                  value={this.state.person_position}
+                  onChange={this.onChangePersonPosition}
                 />
-                <label className="form-check-label">Junior</label>
               </div>
-              <div className="form-check form-check-inline">
+              <div className="form-group">
+                <label>Person's Salary: </label>
                 <input
-                  className="form-check-input"
-                  type="radio"
-                  name="priorityOptions"
-                  id="priorityHigh"
-                  value="Senior"
-                  checked={this.state.person_level === "Senior"}
-                  onChange={this.onChangePersonLevel}
+                  type="text"
+                  className="form-control"
+                  value={this.state.person_salary}
+                  onChange={this.onChangePersonSalary}
                 />
-                <label className="form-check-label">Senior</label>
+              </div>          
+              <div className="form-group">
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="priorityOptions"
+                    id="priorityLow"
+                    value="Intern"
+                    checked={this.state.person_level === "Intern"}
+                    onChange={this.onChangePersonLevel}
+                  />
+                  <label className="form-check-label">Intern</label>
+                </div>
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="priorityOptions"
+                    id="priorityMedium"
+                    value="Junior"
+                    checked={this.state.person_level === "Junior"}
+                    onChange={this.onChangePersonLevel}
+                  />
+                  <label className="form-check-label">Junior</label>
+                </div>
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="priorityOptions"
+                    id="priorityHigh"
+                    value="Senior"
+                    checked={this.state.person_level === "Senior"}
+                    onChange={this.onChangePersonLevel}
+                  />
+                  <label className="form-check-label">Senior</label>
+                </div>
               </div>
-            </div>
-            <div className="form-group">
-              <input
-                type="submit"
-                value="Create person"
-                className="btn btn-primary"
-              />
-            </div>
-          </form>
-        </Jumbotron>
+              <div className="form-group">
+                <input
+                  type="submit"
+                  value="Create person"
+                  className="btn btn-primary"
+                />
+              </div>
+            </form>
+          </Jumbotron>
+        
       </Container>
     );
   }

@@ -12,7 +12,7 @@ import RecordList from "./components/recordList";
 const App = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar/>
       <Route exact path="/">
         <RecordList />
       </Route>

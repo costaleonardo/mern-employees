@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-// This will require to npm install axios
 import axios from 'axios';
 import { withRouter } from "react-router";
+
+import Container from 'react-bootstrap/Container';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 class Edit extends Component {
   // This is the constructor that stores the data.
@@ -79,7 +81,8 @@ class Edit extends Component {
   // This following section will display the update-form that takes the input from the user to update the data.
   render() {
     return (
-      <div>
+      <Container>
+        <Jumbotron className="mt-5 jumbotron--fade-in">
         <h3 align="center">Update Record</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
@@ -148,7 +151,8 @@ class Edit extends Component {
             />
           </div>
         </form>
-      </div>
+        </Jumbotron>
+      </Container>
     );
   }
 }

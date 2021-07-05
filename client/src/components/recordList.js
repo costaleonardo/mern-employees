@@ -72,7 +72,7 @@ export default class RecordList extends Component {
   render() {
     return (
       <Container>
-        <Jumbotron className="mt-5">
+        <Jumbotron className="mt-5 jumbotron--fade-in">
           <h3>Record List</h3>
           <table className="table table-striped" style={{ marginTop: 20 }}>
             <thead>
