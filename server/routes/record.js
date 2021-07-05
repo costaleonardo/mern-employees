@@ -29,6 +29,7 @@ recordRoutes.route("/record/add").post(function (req, res) {
         person_name: req.body.person_name,
         person_position: req.body.person_position,
         person_level: req.body.person_level,
+        person_salary: req.body.person_salary
     };
 
     db_connect.collection("records").insertOne(myobj, function (err, res) {
@@ -45,6 +46,7 @@ recordRoutes.route("/update/:id").post(function (req, res) {
         person_name: req.body.person_name,
         person_position: req.body.person_position,
         person_level: req.body.person_level,
+        person_salary: req.body.person_salary
       },
     };
     db_connect

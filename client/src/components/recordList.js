@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-// This will require to npm install axios
+import Container from 'react-bootstrap/Container';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
@@ -8,6 +9,7 @@ const Record = (props) => (
     <td>{props.record.person_name}</td>
     <td>{props.record.person_position}</td>
     <td>{props.record.person_level}</td>
+    <td>{props.record.person_salary}</td>
     <td>
       <Link to={"/edit/" + props.record._id}>Edit</Link> |
       <a
@@ -69,20 +71,23 @@ export default class RecordList extends Component {
   // This following section will display the table with the records of individuals.
   render() {
     return (
-      <div>
-        <h3>Record List</h3>
-        <table className="table table-striped" style={{ marginTop: 20 }}>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Position</th>
-              <th>Level</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>{this.recordList()}</tbody>
-        </table>
-      </div>
+      <Container>
+        <Jumbotron className="mt-5">
+          <h3>Record List</h3>
+          <table className="table table-striped" style={{ marginTop: 20 }}>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Level</th>
+                <th>Salary</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>{this.recordList()}</tbody>
+          </table>
+        </Jumbotron>
+      </Container>
     );
   }
 }
